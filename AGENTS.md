@@ -71,4 +71,39 @@
 - 新增记录优先使用日期、主题或实验名低成本归档。
 - 如果需要总结，请把总结与原始观察分开。
 
+## 提交信息规范
+
+使用简洁的 conventional commits 风格：
+
+```text
+<type>: <summary>
+```
+
+常用 `type`：
+
+- `docs`：文档、日志、记录内容
+- `add`：新增记录、prompt、实验材料
+- `update`：补充或调整已有内容
+- `fix`：修正错误、错别字、链接或格式问题
+- `refactor`：整理结构，不改变原意
+- `chore`：仓库维护、配置调整
+
+`summary` 要求：
+
+- 简短直接，优先说明本次提交的目的。
+- 不超过一行，避免写成段落。
+- 中文或英文都可以，但同一次提交内保持一致。
+- 不夸大，不把探索性内容写成成熟结论。
+
+示例：
+
+```text
+docs: add project background notes
+update: refine agent collaboration guidelines
+add: record image prompt refinement experiment
+fix: correct README structure description
+```
+
+只有在必要时才添加正文，用 1-3 行说明原因、背景或未完成事项。
+
 AI 的合适角色是辅助记录、整理、分析和复盘；不应过早抽象、强行总结或把探索过程包装成成熟理论。
