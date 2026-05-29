@@ -2,7 +2,7 @@
 
 日期：2026-05-14
 
-分析者：AI
+分析者：AI（openai/gpt-5.5）
 
 分析对象：`logs/2026-05/2026-05-14-gufeng-fan-image-notes/rcd/` 下的会话记录
 
