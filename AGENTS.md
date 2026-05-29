@@ -107,3 +107,44 @@ fix: correct README structure description
 只有在必要时才添加正文，用 1-3 行说明原因、背景或未完成事项。
 
 AI 的合适角色是辅助记录、整理、分析和复盘；不应过早抽象、强行总结或把探索过程包装成成熟理论。
+
+## 模型配置
+
+当前使用 OpenCode Go 订阅，默认模型为 `opencode-go/deepseek-v4-flash`（省钱方案）。
+
+需要深度思考/分析的任务使用 `opencode-go/deepseek-v4-pro`（通过 oracle agent 或手动切换）。
+
+### Agent 分工与模型分配
+
+| Agent | 模型 | 说明 |
+|-------|------|------|
+| orchestrator | deepseek-v4-flash | 日常编排，省钱 |
+| oracle | deepseek-v4-pro | 需要深度分析时调用 |
+| council | deepseek-v4-pro | 需要多角度审查时调用 |
+| librarian | deepseek-v4-flash | 文档查询，低成本 |
+| explorer | deepseek-v4-flash | 代码搜索，低成本 |
+| designer | deepseek-v4-flash | UI 设计，中等成本 |
+| fixer | deepseek-v4-flash | 执行任务，低成本 |
+
+### 作者标注规范
+
+AI 生成的分析文件（放在 `logs/` 或 `experiments/` 下）应在文件开头标注使用的模型，格式如下：
+
+```markdown
+> 分析者：AI（opencode-go/deepseek-v4-flash）
+> 分析日期：2026-05-29
+```
+
+如果是 oracle 深度分析：
+
+```markdown
+> 分析者：AI（opencode-go/deepseek-v4-pro）
+> 分析日期：2026-05-29
+```
+
+历史文件（2026-05-29 之前）使用的是 GPT 系列模型，标注为：
+
+```markdown
+> 分析者：AI（openai/gpt-5.5）
+> 分析日期：2026-05-18
+```
